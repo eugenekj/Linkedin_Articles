@@ -13,8 +13,6 @@ Technology evolves rapidly, and staying ahead requires continuous learning. This
 
 ## Explore Categories
 Browse through various topics and enhance your knowledge with well-structured technical articles.
-<input type="text" id="search-input" placeholder="Search articles..." />
-<script src="/Linkedin_Articles/assets/js/search.js"></script>
 
 ### Programming & Databases
 - <a href="./articles/SQL/" class="article-link">SQL Tutorials</a> - Master SQL queries, optimizations, and best practices.
