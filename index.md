@@ -4,9 +4,6 @@ description: "Explore high-quality technical articles on SQL, Java, System Desig
 author: "Eugene Koshy"
 keywords: "SQL performance tuning, Java best practices, PL/SQL optimization, data engineering pipelines, system design patterns, coding standards, software architecture, backend scalability, ETL workflows"
 ---
-<style>
-  .github-repo { display: none !important; }
-</style>
 
 # Decoding Tech: Guides for the Curious
 
@@ -17,20 +14,20 @@ Technology evolves rapidly, and staying ahead requires continuous learning. This
 ## Explore Categories
 Browse through various topics and enhance your knowledge with well-structured technical articles.
 <input type="text" id="search-input" placeholder="Search articles..." />
-<script src="assets/js/search.js"></script>
+<script src="/assets/js/search.js"></script>
 
 ### Programming & Databases
-- [SQL Tutorials](./articles/SQL/) - Master SQL queries, optimizations, and best practices.
-- [PL/SQL Tutorials](./articles/PLSQL/) - Deep dive into procedural SQL programming.
-- [Java Tutorials](./articles/Java/) - Learn Java fundamentals, advanced concepts, and best practices.
+- <a href="./articles/SQL/" class="article-link">SQL Tutorials</a> - Master SQL queries, optimizations, and best practices.
+- <a href="./articles/PLSQL/" class="article-link">PL/SQL Tutorials</a> - Deep dive into procedural SQL programming.
+- <a href="./articles/Java/" class="article-link">Java Tutorials</a> - Learn Java fundamentals, advanced concepts, and best practices.
 
 ### Data & System Design
-- [Data Engineering Tutorials](./articles/DataEngineering/) - Explore data pipelines, ETL processes, and big data tools.
-- [System Design Articles](./articles/SysDesign/) - Learn architectural patterns, scalability, and high-performance system design.
+- <a href="./articles/DataEngineering/" class="article-link">Data Engineering Tutorials</a> - Explore data pipelines, ETL processes, and big data tools.
+- <a href="./articles/SysDesign/" class="article-link">System Design Articles</a> - Learn architectural patterns, scalability, and high-performance system design.
 
 ### Best Practices & Management
-- [Coding Standards Articles](./articles/Coding_Standards/) - Follow industry-standard coding guidelines and practices.
-- [Manager Articles](./articles/Manager/) - Insights on project management, leadership, and software development strategies.
+- <a href="./articles/Coding_Standards/" class="article-link">Coding Standards Articles</a> - Follow industry-standard coding guidelines and practices.
+- <a href="./articles/Manager/" class="article-link">Manager Articles</a> - Insights on project management, leadership, and software development strategies.
 
 ## Stay Updated 🚀
 New articles are added regularly! Bookmark this page and stay ahead in tech.
