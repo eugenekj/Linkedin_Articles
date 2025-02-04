@@ -1,5 +1,15 @@
+# Table of Contents
+- [Introduction](#introduction)
+- [Advanced Error Handling](#advanced-error-handling)
+  - [Best Practices for Error Handling](#best-practices-for-error-handling)
+- [Logging Practices](#logging-practices)
+  - [Best Practices for Logging](#best-practices-for-logging)
+- [Clean Architecture Principles](#clean-architecture-principles)
+  - [Key Principles](#key-principles)
+- [Conclusion](#conclusion)
+
 # Advanced Error Handling, Logging Practices, and Clean Architecture Principles
-by Eugene Koshy
+*by Eugene Koshy*
 
 ## Introduction
 In the ever-evolving software landscape, applications are expected to be robust, maintainable, and scalable. Advanced error handling, logging practices, and clean architecture principles play a pivotal role in meeting these expectations. These practices ensure that systems remain resilient, developers can debug issues efficiently, and codebases stay manageable as they grow.
@@ -232,7 +242,9 @@ public class Main {
 DECLARE
     -- Declare the input parameters
     v_order_id INT := :order_id;  -- Input order_id parameter
-    v_amount DECIMAL := :amount;  -- Input amount parameter
+   
+
+ v_amount DECIMAL := :amount;  -- Input amount parameter
 BEGIN
     -- Check if the amount is negative
     IF v_amount < 0 THEN

@@ -1,3 +1,29 @@
+# Table of Contents
+- [Why Are Coding Standards and Discipline Crucial?](#why-are-coding-standards-and-discipline-crucial)
+- [General Principles of Coding Standards](#general-principles-of-coding-standards)
+  - [Write Readable Code](#1-write-readable-code)
+  - [Naming Conventions](#2-naming-conventions)
+  - [DRY (Don’t Repeat Yourself)](#3-dry-dont-repeat-yourself)
+  - [KISS (Keep It Simple, Stupid)](#4-kiss-keep-it-simple-stupid)
+- [Coding Standards for Python](#coding-standards-for-python)
+  - [Follow PEP 8 (Python Enhancement Proposal 8)](#1-follow-pep-8-python-enhancement-proposal-8)
+  - [Use Exception Handling](#2-use-exception-handling)
+  - [Avoid Global Variables](#3-avoid-global-variables)
+- [Coding Standards for Java](#coding-standards-for-java)
+  - [Use Design Patterns](#1-use-design-patterns)
+- [Coding Standards for SQL](#coding-standards-for-sql)
+  - [Consistent Formatting](#1-consistent-formatting)
+  - [Avoid SELECT *](#2-avoid-select-)
+  - [Optimize Queries](#3-optimize-queries)
+- [Coding Discipline: Beyond Standards](#coding-discipline-beyond-standards)
+  - [Regular Code Reviews](#1-regular-code-reviews)
+  - [Use Automation Tools](#2-use-automation-tools)
+  - [Maintain Documentation](#3-maintain-documentation)
+- [Challenges in Following Standards](#challenges-in-following-standards)
+  - [Legacy Code](#1-legacy-code)
+  - [Team Resistance](#2-team-resistance)
+  - [Tool Overhead](#3-tool-overhead)
+
 # Coding Standards and Discipline: The Foundation of Exceptional Software Development
 *by Eugene Koshy*
 

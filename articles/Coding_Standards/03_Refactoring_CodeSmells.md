@@ -1,3 +1,17 @@
+## Table of Contents
+1. [Introduction](#introduction)
+2. [What is Refactoring?](#what-is-refactoring)
+3. [Introduction to Code Smells](#introduction-to-code-smells)
+4. [When and How to Refactor Your Code](#when-and-how-to-refactor-your-code)
+5. [Techniques for Identifying and Fixing Bad Code](#techniques-for-identifying-and-fixing-bad-code)
+6. [Refactoring in Agile Development](#refactoring-in-agile-development)
+7. [Refactoring vs. Rewriting](#refactoring-vs-rewriting)
+8. [The 5-Minute Rule for Refactoring](#the-5-minute-rule-for-refactoring)
+9. [Tools for Refactoring](#tools-for-refactoring)
+10. [Code Smells and Their Solutions](#code-smells-and-their-solutions)
+11. [Conclusion](#conclusion)
+
+---
 # Refactoring and Code Smells: Strategies for Cleaner Code
 *by Eugene Koshy*
 

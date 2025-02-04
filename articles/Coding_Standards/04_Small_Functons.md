@@ -1,3 +1,13 @@
+---
+
+## Table of Contents
+1. [The Importance of Small and Concise Functions](#1-the-importance-of-small-and-concise-functions)
+2. [How to Refactor Large Functions into Smaller Ones](#2-how-to-refactor-large-functions-into-smaller-ones)
+3. [Principles of Single Responsibility and DRY](#3-principles-of-single-responsibility-and-dry)
+4. [Examples in Python, Java, and SQL](#4-examples-in-python-java-and-sql)
+
+---
+
 # Small Functions, Big Impact: The Key to Clean and Scalable Code
 
 As developers, we often face the challenge of writing code that’s not only functional but also clean, maintainable, and scalable. One of the most effective ways to achieve this is by writing small, single-responsibility functions. These functions are easier to read, test, and reuse, making your codebase more robust and collaborative. In this article, we’ll dive deep into the importance of small and concise functions, how to refactor large functions into smaller ones, and the principles of single responsibility and DRY (Don’t Repeat Yourself). We’ll also explore practical examples in Python, Java, and SQL to help you apply these concepts in your projects. Let’s get started!
@@ -250,7 +260,7 @@ def recover_password(email):
     # Password recovery logic...
 ```
 
-## Examples in Python, Java, and SQL
+## 4. Examples in Python, Java, and SQL
 
 ### Python Example:
 
@@ -353,5 +363,3 @@ SELECT * FROM customer_totals WHERE total_spent > 1000;
 ```
 
 Writing small, single-responsibility functions is a cornerstone of clean, maintainable code. By focusing on readability, modularity, and reusability, you can transform your codebase into something that’s not only functional but also a joy to work with. Remember the principles of single responsibility and DRY, and start refactoring your functions today. Your future self (and your teammates) will thank you!
-```
-
