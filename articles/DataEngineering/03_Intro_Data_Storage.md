@@ -1,13 +1,33 @@
-# Understanding Data Storage: A Deep Dive into Relational vs NoSQL Databases with Real-World Examples
+# Table of Contents
+- [Introduction](#introduction)
+- [1. What are Relational Databases?](#1-what-are-relational-databases)
+  - [Key Features](#key-features)
+  - [Real-World Use Cases](#real-world-use-cases)
+  - [Examples](#examples)
+  - [Deep Dive into AWS RDS](#deep-dive-into-aws-rds)
+  - [Deep Dive into OCI Autonomous Database](#deep-dive-into-oci-autonomous-database)
+- [2. What are NoSQL Databases?](#2-what-are-nosql-databases)
+  - [Key Features](#key-features-1)
+  - [Types of NoSQL Databases](#types-of-nosql-databases)
+  - [Deep Dive into AWS DynamoDB (NoSQL Example)](#deep-dive-into-aws-dynamodb-nosql-example)
+- [3. Key Differences Between Relational and NoSQL Databases](#3-key-differences-between-relational-and-nosql-databases)
+- [4. How to Choose the Right Database?](#4-how-to-choose-the-right-database)
+- [5. Real-World Examples](#5-real-world-examples)
+- [6. Challenges and Best Practices](#6-challenges-and-best-practices)
+  - [Challenges](#challenges)
+  - [Best Practices](#best-practices)
+- [Conclusion](#conclusion)
 
 ---
 
 ## Introduction  
+
 In today’s data-driven world, choosing the right database is fundamental to building efficient, scalable, and future-proof systems. Whether you're working on an ETL pipeline, a data warehouse, or a real-time analytics platform, understanding the types of databases and their capabilities is key. In this article, we’ll focus on two primary database categories—**Relational Databases** and **NoSQL Databases**—while providing real-world examples using **AWS RDS** and **OCI Autonomous Database**. While other databases like MongoDB, Redis, and Cassandra are widely used, this series will focus on the AWS and OCI ecosystems, diving deeper into their services in future articles. Let’s dive in!
 
 ---
 
 ## 1. What are Relational Databases?  
+
 Relational databases have been the backbone of data storage for decades. They organize data into structured tables with rows and columns, using **SQL (Structured Query Language)** for querying and management.
 
 ### Key Features:  
@@ -36,6 +56,7 @@ Relational databases have been the backbone of data storage for decades. They or
 ---
 
 ## 2. What are NoSQL Databases?  
+
 NoSQL databases emerged to overcome the limitations of relational databases, particularly in handling unstructured or semi-structured data. These databases are highly scalable, flexible, and designed for large-scale, data-intensive applications.
 
 ### Key Features:  
@@ -70,6 +91,7 @@ NoSQL databases emerged to overcome the limitations of relational databases, par
 ---
 
 ## 4. How to Choose the Right Database?  
+
 When selecting a database, consider factors like data structure, scalability, and consistency requirements. Here’s a simplified decision framework to help:
 
 ### Choose Relational Databases if:  
@@ -109,6 +131,7 @@ When selecting a database, consider factors like data structure, scalability, an
 ---
 
 ## Conclusion  
+
 Relational and NoSQL databases serve different but complementary purposes. By understanding their strengths and weaknesses, you’ll be better equipped to choose the right tool for your data engineering needs. In future articles, we’ll take a closer look at **AWS** and **OCI** cloud solutions, deep diving into services like **AWS Glue** and **OCI Data Integration**, and exploring how to build scalable, high-performance data systems using these platforms.
 
 ---
@@ -118,10 +141,5 @@ Relational and NoSQL databases serve different but complementary purposes. By un
 2. NoSQL databases offer flexibility and scalability, perfect for unstructured data and real-time applications.  
 3. **AWS RDS** and **OCI Autonomous Database** are powerful managed services for relational workloads, while **DynamoDB** is a top choice for NoSQL use cases.  
 4. Use **polyglot persistence** to combine the strengths of both database types in your data architecture.  
-
----
-
-## Call to Action  
-What’s your experience with **AWS RDS** or **OCI Autonomous Database**? Have you used **DynamoDB** or other NoSQL solutions in your projects? Share your thoughts and challenges in the comments below—I’d love to hear your stories!  
 
 ---

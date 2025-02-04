@@ -1,3 +1,28 @@
+# Table of Contents
+
+  - [What Is Object-Oriented Programming (OOP)?](#what-is-object-oriented-programming-oop)
+  - [Key OOP Concepts in Java](#key-oop-concepts-in-java)
+    - [1. Creating Classes and Objects in Java](#1-creating-classes-and-objects-in-java)
+    - [2. Constructor Overloading and Default Constructors](#2-constructor-overloading-and-default-constructors)
+      - [Default Constructor](#default-constructor)
+      - [Constructor Overloading](#constructor-overloading)
+      - [Constructor Chaining](#constructor-chaining)
+    - [3. Encapsulation](#3-encapsulation)
+    - [4. Inheritance](#4-inheritance)
+    - [5. Polymorphism](#5-polymorphism)
+    - [6. Abstraction](#6-abstraction)
+    - [7. Association: Types of Relationships Between Objects](#7-association-types-of-relationships-between-objects)
+  - [Practical Scenarios and Examples: When to Use Each OOP Concept](#practical-scenarios-and-examples-when-to-use-each-oop-concept)
+    - [1. When to Use Classes and Objects](#1-when-to-use-classes-and-objects)
+    - [2. When to Use Constructor Overloading and Default Constructors](#2-when-to-use-constructor-overloading-and-default-constructors)
+    - [3. When to Use Encapsulation](#3-when-to-use-encapsulation)
+    - [4. When to Use Inheritance](#4-when-to-use-inheritance)
+    - [5. When to Use Polymorphism](#5-when-to-use-polymorphism)
+    - [6. When to Use Abstraction](#6-when-to-use-abstraction)
+    - [7. When to Use Association](#7-when-to-use-association)
+  - [Best Practices for OOP in Java](#best-practices-for-oop-in-java)
+  - [Common Pitfalls and Troubleshooting](#common-pitfalls-and-troubleshooting)
+
 # Object-Oriented Programming (OOP) in Java: Classes, Objects, Constructors, and Beyond
 
 Object-Oriented Programming (OOP) is one of the most widely used paradigms for structuring software, especially in languages like Java. It helps developers write clean, reusable, and maintainable code by organizing related data and behaviors into objects and classes. This article aims to cover all the fundamental OOP concepts in Java, from creating classes and objects, to constructor overloading, default constructors, and even the relationships between objects through association.

@@ -2,6 +2,14 @@
 
 Java methods are the building blocks of behavior in your programs. Understanding them thoroughly is crucial to writing clean, efficient, and modular code. In this article, we'll explore methods in Java with deep technical details, multiple examples, edge cases, and best practices. By the end of this article, you’ll have everything you need to confidently use methods in your Java applications.
 
+## Table of Contents
+- [1. Method Declaration in Java](#1-method-declaration-in-java)
+- [2. Parameters in Java Methods](#2-parameters-in-java-methods)
+- [3. Return Types in Java Methods](#3-return-types-in-java-methods)
+- [4. Method Overloading in Java](#4-method-overloading-in-java)
+- [5. Edge Cases and Limitations of Method Overloading](#5-edge-cases-and-limitations-of-method-overloading)
+- [6. Additional Tips and Best Practices](#6-additional-tips-and-best-practices)
+- [7. Conclusion](#7-conclusion)
 ## 1. Method Declaration in Java
 
 A method in Java is defined with specific components. Understanding the syntax and components is vital for writing functional and well-organized methods.
