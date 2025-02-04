@@ -24,6 +24,8 @@
   - [Team Resistance](#2-team-resistance)
   - [Tool Overhead](#3-tool-overhead)
 
+---
+
 # Coding Standards and Discipline: The Foundation of Exceptional Software Development
 *by Eugene Koshy*
 

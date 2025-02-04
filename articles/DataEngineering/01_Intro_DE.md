@@ -11,6 +11,8 @@
 6. [Comparison of Cloud Platforms for Data Engineering](#comparison-of-cloud-platforms-for-data-engineering)
 7. [General Best Practices for Data Engineering](#general-best-practices-for-data-engineering)
 
+---
+
 # Data Engineering: The Backbone of Modern Analytics
 
 In today’s data-driven world, the role of data engineering is pivotal. It forms the foundation for businesses to harness the power of data, enabling informed decision-making, predictive analytics, and innovative solutions. This article introduces you to the world of data engineering, its importance, and what lies ahead in this field.

@@ -1,4 +1,4 @@
-## Table of Contents
+# Table of Contents
 1. [Introduction](#introduction)
 2. [What is Refactoring?](#what-is-refactoring)
 3. [Introduction to Code Smells](#introduction-to-code-smells)

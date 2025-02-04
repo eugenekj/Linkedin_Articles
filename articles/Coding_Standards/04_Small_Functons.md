@@ -1,6 +1,4 @@
----
-
-## Table of Contents
+# Table of Contents
 1. [The Importance of Small and Concise Functions](#1-the-importance-of-small-and-concise-functions)
 2. [How to Refactor Large Functions into Smaller Ones](#2-how-to-refactor-large-functions-into-smaller-ones)
 3. [Principles of Single Responsibility and DRY](#3-principles-of-single-responsibility-and-dry)
@@ -363,3 +361,4 @@ SELECT * FROM customer_totals WHERE total_spent > 1000;
 ```
 
 Writing small, single-responsibility functions is a cornerstone of clean, maintainable code. By focusing on readability, modularity, and reusability, you can transform your codebase into something that’s not only functional but also a joy to work with. Remember the principles of single responsibility and DRY, and start refactoring your functions today. Your future self (and your teammates) will thank you!
+```

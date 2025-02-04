@@ -15,6 +15,8 @@
    - [ETL Workflow in Data Engineering](#etl-workflow-in-data-engineering)
    - [Advanced Techniques: Optimizing ETL Pipelines](#advanced-techniques-optimizing-etl-pipelines)
 
+---
+
 # A Deep Dive into ETL Pipelines: Transforming Raw Data into Valuable Insights
 
 In the data engineering ecosystem, ETL (Extract, Transform, Load) pipelines play a critical role in converting raw data into actionable insights. These pipelines are the backbone of data processing systems, ensuring that data is collected, transformed, and stored in ways that allow organizations to derive meaningful conclusions.

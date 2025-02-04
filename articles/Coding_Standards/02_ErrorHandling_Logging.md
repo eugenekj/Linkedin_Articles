@@ -8,6 +8,8 @@
   - [Key Principles](#key-principles)
 - [Conclusion](#conclusion)
 
+---
+
 # Advanced Error Handling, Logging Practices, and Clean Architecture Principles
 *by Eugene Koshy*
 

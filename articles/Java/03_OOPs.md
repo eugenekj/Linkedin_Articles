@@ -23,6 +23,8 @@
   - [Best Practices for OOP in Java](#best-practices-for-oop-in-java)
   - [Common Pitfalls and Troubleshooting](#common-pitfalls-and-troubleshooting)
 
+---
+
 # Object-Oriented Programming (OOP) in Java: Classes, Objects, Constructors, and Beyond
 
 Object-Oriented Programming (OOP) is one of the most widely used paradigms for structuring software, especially in languages like Java. It helps developers write clean, reusable, and maintainable code by organizing related data and behaviors into objects and classes. This article aims to cover all the fundamental OOP concepts in Java, from creating classes and objects, to constructor overloading, default constructors, and even the relationships between objects through association.

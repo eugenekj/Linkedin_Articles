@@ -37,6 +37,7 @@
 - [Performance Considerations](#performance-considerations)
 - [Exception Handling](#exception-handling)
 
+---
 
 # Introduction to Java: A Beginner’s Guide
 
