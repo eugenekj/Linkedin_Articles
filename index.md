@@ -7,16 +7,14 @@ keywords: "SQL performance tuning, Java best practices, PL/SQL optimization, dat
 
 # Decoding Tech: Guides for the Curious
 
-## Quick Search
-<input type="text" id="search-input" placeholder="Search articles..." />
-
-*By Eugene Koshy*
 
 ## Introduction
 Technology evolves rapidly, and staying ahead requires continuous learning. This space is dedicated to breaking down complex tech topics into digestible, practical guides. Whether you're a beginner or an experienced professional, you'll find insightful articles to expand your knowledge and sharpen your skills.
 
 ## Explore Categories
 Browse through various topics and enhance your knowledge with well-structured technical articles.
+<input type="text" id="search-input" placeholder="Search articles..." />
+<script src="assets/js/search.js"></script>
 
 ### Programming & Databases
 - [SQL Tutorials](./articles/SQL/) - Master SQL queries, optimizations, and best practices.

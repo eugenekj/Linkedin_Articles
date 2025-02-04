@@ -1,3 +1,4 @@
 title: My Technical Articles
 description: A collection of my technical blogs on SQL, Java, System Design, and more.
 theme: jekyll-theme-hacker
+custom_css: assets/css/custom.css
