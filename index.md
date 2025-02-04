@@ -7,7 +7,6 @@ keywords: "SQL performance tuning, Java best practices, PL/SQL optimization, dat
 
 # Decoding Tech: Guides for the Curious
 
-
 ## Introduction
 Technology evolves rapidly, and staying ahead requires continuous learning. This space is dedicated to breaking down complex tech topics into digestible, practical guides. Whether you're a beginner or an experienced professional, you'll find insightful articles to expand your knowledge and sharpen your skills.
 
