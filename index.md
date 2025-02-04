@@ -4,6 +4,9 @@ description: "Explore high-quality technical articles on SQL, Java, System Desig
 author: "Eugene Koshy"
 keywords: "SQL performance tuning, Java best practices, PL/SQL optimization, data engineering pipelines, system design patterns, coding standards, software architecture, backend scalability, ETL workflows"
 ---
+<style>
+  .github-repo { display: none !important; }
+</style>
 
 # Decoding Tech: Guides for the Curious
 
