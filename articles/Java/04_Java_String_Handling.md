@@ -1,12 +1,13 @@
 # Table of Contents
-1. [What is a String in Java?](#what-is-a-string-in-java)
-2. [Common String Operations](#common-string-operations)
-3. [Comparing Strings](#comparing-strings)
-4. [Mutable Strings: StringBuilder and StringBuffer](#mutable-strings-stringbuilder-and-stringbuffer)
-5. [Performance Considerations](#performance-considerations)
-6. [Advanced String Methods](#advanced-string-methods)
-7. [Regular Expressions & Pattern Matching](#regular-expressions-pattern-matching)
-8. [Best Practices](#best-practices)
+
+- [What is a String in Java?](#1-what-is-a-string-in-java)
+- [Common String Operations](#2-common-string-operations)
+- [Comparing Strings](#3-comparing-strings)
+- [Mutable Strings: StringBuilder and StringBuffer](#4-mutable-strings-stringbuilder-and-stringbuffer)
+- [Performance Considerations](#5-performance-considerations)
+- [Advanced String Methods](#6-advanced-string-methods)
+- [Regular Expressions & Pattern Matching](#7-regular-expressions-pattern-matching)
+- [Best Practices](#8-best-practices)
 
 # String Handling in Java: A Comprehensive Guide
 
@@ -188,4 +189,4 @@ while (matcher.find()) {
 ---
 
 Mastering string manipulation in Java is key to writing efficient, secure, and maintainable code. By understanding the differences between `String`, `StringBuilder`, and `StringBuffer`, and leveraging modern Java features and regular expressions, you can handle strings with ease and optimize your application's performance.
-```
+``` 
