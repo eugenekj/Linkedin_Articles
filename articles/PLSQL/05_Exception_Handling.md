@@ -154,9 +154,7 @@ EXCEPTION
       DBMS_OUTPUT.PUT_LINE('Cannot delete: Child records exist.');
 END;
 ```
-Here's the continuation of your document in Markdown format for GitHub Pages:
 
-```markdown
 ## 6. The `WHEN OTHERS` Clause
 
 `WHEN OTHERS` acts as a catch-all handler but should be used cautiously.
@@ -300,9 +298,6 @@ BEGIN
    END IF;
 END;
 ```
-Here is the continuation of your document in Markdown format for GitHub Pages:
-
-```markdown
 ## Case Study: E-Commerce Order Processing
 
 ### Scenario: Handle inventory checks, payment validation, and order logging in a transaction.
@@ -459,9 +454,6 @@ EXCEPTION
       RAISE;
 END;
 ```
-Here is the continuation of your document in Markdown format for GitHub Pages:
-
-```markdown
 ## 16. Case Study: Banking Transaction System
 
 ### Handle overdrafts, concurrency, and invalid accounts in a transaction.
@@ -584,9 +576,6 @@ BEGIN
    END;
 END;
 ```
-Here is the continuation of your document in Markdown format for GitHub Pages:
-
-```markdown
 ## 21. Exception Handling in Compound Triggers
 
 Handle errors in compound triggers with separate exception sections for each timing point.
