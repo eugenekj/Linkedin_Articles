@@ -5,3 +5,4 @@
 3. [Refactoring and Code Smells](./03_Refactoring_CodeSmells.md)
 4. [Writing Small, Single-Responsibility Functions](./04_Small_Functons.md)
 5. [Proper usage of Function Params](./05_Functon_Parameters.md)
+6. [Avoid Global Variables](./06_Avoid_Global_Variables.md)

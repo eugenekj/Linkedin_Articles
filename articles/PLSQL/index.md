@@ -5,3 +5,4 @@
 3. [Cursors](./03_Cursors.md)
 4. [Bulk Collect and FORALL](./04_Bulk_Collect_and_FORALL.md)
 5. [Exception Handling](./05_Exception_Handling.md)
+6. [Null handling in PL/SQL](./06_NULL_Handling.md)
