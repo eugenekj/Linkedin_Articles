@@ -498,33 +498,51 @@ write_behind_cache(1, user_data)
 ---
 
 ### **8. Multi-Level Caching**
-**Multi-Level Caching** leverages multiple levels of cache, like having an in-memory cache (Redis) and a distributed cache (e.g., using Memcached or a cloud solution). This approach allows more frequent reads from the fast local cache while using the secondary cache layer for persistence.
 
-#### **Scenario:**
-A system that requires a hierarchy of caches to balance fast data access (in-memory) with large-scale persistence (distributed cache).
+#### **Implementation Guide:**
 
-##### **Implementation Example:**
+##### **Step 1: Code Example**
 
 ```python
 import redis
 import time
 import json
 import memcache
+from tenacity import retry, stop_after_attempt, wait_fixed
 
-# Connect to Redis (Level 1 Cache)
-redis_pool = redis.ConnectionPool(host='localhost', port=6379, db=0)
-redis_client = redis.Redis(connection_pool=redis_pool)
+# Connect to Redis (Level 1 Cache) with retry logic
+@retry(stop=stop_after_attempt(3), wait=wait_fixed(1))
+def connect_to_redis():
+    try:
+        pool = redis.ConnectionPool(host='localhost', port=6379, db=0)
+        redis_client = redis.Redis(connection_pool=pool)
+        print("Connected to Redis.")
+        return redis_client
+    except redis.ConnectionError as e:
+        print(f"Failed to connect to Redis: {e}")
+        raise
+
+redis_client = connect_to_redis()
 
 # Connect to Memcache (Level 2 Cache)
-memcache_client = memcache.Client(['127.0.0.1:11211'])
+try:
+    memcache_client = memcache.Client(['127.0.0.1:11211'])
+    print("Connected to Memcache.")
+except Exception as e:
+    print(f"Failed to connect to Memcache: {e}")
+    exit(1)
 
-# Simulated database fetch
+# Simulated database fetch with error handling
 def fetch_from_db(id):
-    print(f"Fetching data from DB for {id}...")
-    time.sleep(2)  # Simulate DB delay
-    return {"id": id, "data": f"Data for {id}"}
+    try:
+        print(f"Fetching data from DB for {id}...")
+        time.sleep(2)  # Simulate DB delay
+        return {"id": id, "data": f"Data for {id}"}
+    except Exception as e:
+        print(f"DB fetch failed: {e}")
+        raise
 
-# Multi-Level Cache Logic
+# Multi-Level Cache Logic with Redis backfill
 def get_data(id):
     # Level 1: Check Redis (fast in-memory cache)
     cached_data = redis_client.get(id)
@@ -536,6 +554,7 @@ def get_data(id):
     cached_data_memcache = memcache_client.get(id)
     if cached_data_memcache:
         print(f"Cache hit in Memcache (Level 2) for {id}")
+        redis_client.setex(id, 10, cached_data_memcache)  # Populate Redis
         return json.loads(cached_data_memcache.decode("utf-8"))
     
     # Cache miss, fetch from DB
@@ -554,50 +573,55 @@ print(get_data(1))  # Cache miss, fetch from DB
 print(get_data(1))  # Cache hit in Redis (Level 1)
 ```
 
-**Explanation:**
-- **Level 1** (Redis) is the fast, in-memory cache.
-- **Level 2** (Memcache) is a more distributed, persistent cache that can store larger datasets.
-- This multi-level approach optimizes read operations across multiple layers of caching.
+##### **Explanation:**
+- **Multi-Level Caching**: Uses Redis as the fast in-memory cache (Level 1) and Memcache as the distributed cache (Level 2).
+- **Error Handling**: Added retry logic for Redis and error handling for Memcache and DB operations.
+- **Redis Backfill**: On a Memcache hit, the data is backfilled into Redis to improve future access times.
+
+##### **To Implement:**
+1. Install Redis and Memcache.
+2. Set up the Python `redis-py` and `python-memcached` libraries.
+3. Implement the multi-level caching logic with Redis and Memcache.
 
 ---
 
 ### **9. Distributed Cache with Sharding**
 
-In the case of **sharding**, the cache is split across multiple Redis servers or nodes to distribute the data. Redis itself supports **sharding** natively through **Redis Cluster**, where it divides the data into slots and stores them across multiple Redis instances.
+#### **Implementation Guide:**
 
-While I can't simulate a full Redis Cluster setup here, I can show how you would configure sharding using a **Redis client** that supports sharding.
-
-#### **Example: Redis Cluster Client (Sharding)**
-
-Using a Python library like **`redis-py-cluster`**, you can implement a distributed cache with sharding. Here's an example setup for it:
-
-##### **Installation**:
-You'll need to install the `redis-py-cluster` library.
-
-```bash
-pip install redis-py-cluster
-```
-
-##### **Example Code**:
+##### **Step 1: Code Example**
 
 ```python
 from rediscluster import RedisCluster
 import json
+from tenacity import retry, stop_after_attempt, wait_fixed
 
-# Connect to Redis Cluster
-startup_nodes = [
-    {"host": "localhost", "port": "7000"},
-    {"host": "localhost", "port": "7001"},
-    {"host": "localhost", "port": "7002"}
-]
+# Connect to Redis Cluster with retry logic
+@retry(stop=stop_after_attempt(3), wait=wait_fixed(1))
+def connect_to_redis_cluster():
+    try:
+        startup_nodes = [
+            {"host": "localhost", "port": "7000"},
+            {"host": "localhost", "port": "7001"},
+            {"host": "localhost", "port": "7002"}
+        ]
+        rc = RedisCluster(startup_nodes=startup_nodes, decode_responses=True)
+        print("Connected to Redis Cluster.")
+        return rc
+    except Exception as e:
+        print(f"Failed to connect to Redis Cluster: {e}")
+        raise
 
-# Connect to the Redis Cluster
-rc = RedisCluster(startup_nodes=startup_nodes, decode_responses=True)
+rc = connect_to_redis_cluster()
 
-# Simulated DB fetch
+# Simulated DB fetch with error handling
 def fetch_from_db(id):
-    print(f"Fetching data from DB for {id}...")
-    return {"id": id, "data": f"Data for {id}"}
+    try:
+        print(f"Fetching data from DB for {id}...")
+        return {"id": id, "data": f"Data for {id}"}
+    except Exception as e:
+        print(f"DB fetch failed: {e}")
+        raise
 
 # Function to get data from the distributed cache
 def get_data_from_cache(id):
@@ -616,70 +640,89 @@ print(get_data_from_cache(1))  # Cache miss
 print(get_data_from_cache(1))  # Cache hit
 ```
 
-**Explanation**:
-- The `RedisCluster` client connects to multiple Redis nodes (servers), and Redis handles sharding data automatically.
-- If a data key doesn't exist in the cache, it fetches from the simulated database and stores it in the cluster.
+##### **Explanation:**
+- **Distributed Cache with Sharding**: Uses Redis Cluster to distribute data across multiple nodes.
+- **Error Handling**: Added retry logic for Redis Cluster connection and error handling for DB operations.
+- **Automatic Sharding**: Redis Cluster handles sharding automatically.
 
-To properly set this up, you would need a Redis Cluster running with multiple Redis nodes (`localhost:7000`, `localhost:7001`, etc.) that are configured to handle sharding.
+##### **To Implement:**
+1. Set up a Redis Cluster with multiple nodes.
+2. Install the `redis-py-cluster` library.
+3. Implement the distributed caching logic with Redis Cluster.
 
 ---
 
 ### **10. Time-Based Caching**
 
-In **Time-Based Caching**, you typically want to invalidate or refresh the cache periodically based on a fixed interval rather than relying on events. This is often done using **scheduled tasks**.
+#### **Implementation Guide:**
 
-You can achieve time-based caching in Python with libraries like **Celery**, **APScheduler**, or even simple `time.sleep` with periodic cache invalidation. For this example, I'll show you how to do it with **APScheduler**.
-
-##### **Installation**:
-You'll need to install the `APScheduler` library.
-
-```bash
-pip install apscheduler
-```
-
-##### **Example Code**:
+##### **Step 1: Code Example**
 
 ```python
 import redis
 import time
 import json
 from apscheduler.schedulers.background import BackgroundScheduler
+from tenacity import retry, stop_after_attempt, wait_fixed
 
-# Connect to Redis
-r = redis.Redis(host='localhost', port=6379, db=0)
+# Connect to Redis with retry logic
+@retry(stop=stop_after_attempt(3), wait=wait_fixed(1))
+def connect_to_redis():
+    try:
+        pool = redis.ConnectionPool(host='localhost', port=6379, db=0)
+        r = redis.Redis(connection_pool=pool)
+        print("Connected to Redis.")
+        return r
+    except redis.ConnectionError as e:
+        print(f"Failed to connect to Redis: {e}")
+        raise
 
-# Simulated DB fetch
+r = connect_to_redis()
+
+# Simulated DB fetch with error handling
 def fetch_from_db(id):
-    print(f"Fetching data from DB for {id}...")
-    return {"id": id, "data": f"Data for {id}"}
+    try:
+        print(f"Fetching data from DB for {id}...")
+        return {"id": id, "data": f"Data for {id}"}
+    except Exception as e:
+        print(f"DB fetch failed: {e}")
+        raise
 
 # Function to cache data periodically (every 10 seconds)
 def refresh_cache(id):
-    data = fetch_from_db(id)
-    r.setex(id, 10, json.dumps(data))  # Set a TTL of 10 seconds for cache
-    print(f"Cache for {id} refreshed!")
+    try:
+        data = fetch_from_db(id)
+        r.setex(id, 10, json.dumps(data))  # Set a TTL of 10 seconds for cache
+        print(f"Cache for {id} refreshed!")
+    except Exception as e:
+        print(f"Cache refresh failed: {e}")
 
 # Setup Scheduler
 scheduler = BackgroundScheduler()
-scheduler.add_job(refresh_cache, 'interval', seconds=10, args=[1])  # Refresh every 10 seconds
+scheduler.add_job(refresh_cache, 'interval', seconds=10, args=[1], max_instances=1)  # Refresh every 10 seconds
 scheduler.start()
 
 # Testing Time-Based Cache
-while True:
-    cached_data = r.get(1)
-    if cached_data:
-        print(f"Cache hit: {json.loads(cached_data)}")
-    else:
-        print(f"Cache miss for ID 1")
-    time.sleep(5)  # Check every 5 seconds
+try:
+    while True:
+        cached_data = r.get(1)
+        if cached_data:
+            print(f"Cache hit: {json.loads(cached_data)}")
+        else:
+            print(f"Cache miss for ID 1")
+        time.sleep(5)  # Check every 5 seconds
+except KeyboardInterrupt:
+    scheduler.shutdown()
 ```
 
-**Explanation**:
-- The `APScheduler` is set up to run the `refresh_cache` function every 10 seconds. This function fetches fresh data from the database and updates the cache with a **TTL (Time to Live)** of 10 seconds.
-- In the main loop, the system checks the cache every 5 seconds. If data is available, it uses it. If not, it triggers a cache refresh.
+##### **Explanation:**
+- **Time-Based Caching**: Uses APScheduler to refresh the cache periodically.
+- **Error Handling**: Added retry logic for Redis connection and error handling for DB operations.
+- **Scheduler**: The `refresh_cache` function runs every 10 seconds to update the cache.
 
-**Note**:
-- In this example, the cache is set to expire every 10 seconds. You can adjust the frequency based on how often you want the cache to be refreshed.
-- The scheduler runs in the background and updates the cache periodically without needing explicit user intervention.
+##### **To Implement:**
+1. Install the `APScheduler` library.
+2. Set up a scheduler to refresh the cache periodically.
+3. Implement the time-based caching logic with Redis.
 
 ---
