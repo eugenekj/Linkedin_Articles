@@ -5,4 +5,4 @@
 3. [Scalability](./03_Scalability.md)
 4. [Load Balancing](./04_Load_Balancing.md)
 5. [Caching Strategies](./05_Caching.md)
-        [Caching Examples](./05_Caching_examples.md)
+   - [Caching Examples](./05_Caching_examples.md)

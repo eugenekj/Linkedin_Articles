@@ -211,4 +211,4 @@ CDNs like Cloudflare or AWS CloudFront cache static content (such as images, vid
 
 Caching is essential for building high-performance, scalable systems. Whether it's reducing latency, improving throughput, or offloading backend systems, caching is a tool that every engineer must understand deeply. By selecting the appropriate caching strategy and designing a cache architecture tailored to your application’s needs, you can significantly enhance performance and reduce operational costs.
 
-Please refer caching examples () for code snippets 
+Please refer caching examples page for code snippets 
